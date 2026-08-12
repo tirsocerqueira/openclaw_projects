@@ -5,21 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO TÉCNICO -->
-    <title>Quiénes somos | La Lata en Casa - Tradición de Conservas Pay Pay</title>
-    <meta name="description" content="Descubre La Lata en Casa: seleccionamos las mejores conservas premium de Conservas Pay Pay desde Vigo. Tradición atlántica, calidad artesanal y sabor desde 1981.">
+    <title>Sobre Nosotros | La Lata en Casa - Tradición de Conservas Pay Pay</title>
+    <meta name="description" content="Descubre la historia de La Lata en Casa y nuestra alianza con Conservas Pay Pay. Más de 40 años seleccionando lo mejor del mar de Vigo para tu mesa gourmet.">
     <link rel="canonical" href="https://tirsocerqueira.github.io/openclaw_projects/">
     
-    <!-- Open Graph -->
-    <meta property="og:title" content="Quiénes somos | La Lata en Casa">
-    <meta property="og:description" content="Conservas gallegas premium seleccionadas en Vigo. Tradición y sabor desde 1981.">
-    <meta property="og:type" content="website">
-    
-    <!-- Fonts: Cormorant para elegancia, Inter para legibilidad -->
+    <!-- Preconnect Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Tailwind + Configuración de Marca -->
+    <!-- Tailwind Configuration -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -35,9 +30,6 @@
                     fontFamily: {
                         serif: ['Cormorant Garamond', 'serif'],
                         sans: ['Inter', 'sans-serif']
-                    },
-                    letterSpacing: {
-                        widest: '.25em',
                     }
                 }
             }
@@ -45,201 +37,210 @@
     </script>
     
     <style>
-        /* Tipografías y Base */
-        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
-        
-        /* Efecto Revelado (Scroll) */
+        /* Tipografías fluidas y ajustes de contraste */
+        body { font-variant-ligatures: common-ligatures; text-rendering: optimizeLegibility; }
+        h1, h2, h3 { font-weight: 500; }
+
+        /* Efectos de Scroll (Intersection Observer) */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.9s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+            transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Línea Conectora "Así Trabajamos" */
-        .process-connector::after {
+        /* Micro-interacciones */
+        .btn-premium {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        .btn-premium::after {
             content: '';
             position: absolute;
-            top: 2rem;
-            left: 50%;
-            width: 100%;
-            height: 1px;
-            background-color: #C9A227;
-            opacity: 0.3;
-            z-index: 0;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #C9A227;
+            transition: width 0.4s ease;
+        }
+        .btn-premium:hover::after { width: 100%; }
+
+        /* Línea conectora del proceso */
+        @media (min-width: 768px) {
+            .process-line::after {
+                content: '';
+                position: absolute;
+                top: 2rem;
+                left: 50%;
+                width: 100%;
+                height: 1px;
+                background-color: #C9A227;
+                opacity: 0.2;
+                z-index: 0;
+            }
         }
 
-        /* Estilo Sepia para Historia */
-        .sepia-filter {
-            filter: sepia(60%) contrast(1.1) brightness(0.9);
-            transition: filter 0.5s ease;
-        }
-        .sepia-filter:hover {
-            filter: sepia(0%) contrast(1) brightness(1);
-        }
-
-        /* Microinteracciones */
-        .hover-lift { transition: transform 0.3s ease; }
-        .hover-lift:hover { transform: translateY(-4px); }
-
-        /* Masonry Ligera */
-        .masonry-grid {
+        /* Masonry Ligera para Entorno */
+        .masonry {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            grid-auto-rows: 200px;
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-auto-rows: 250px;
+            gap: 1.5rem;
         }
-        .masonry-item:nth-child(2n) { grid-row: span 2; }
-        .masonry-item:nth-child(3n) { grid-row: span 1.5; }
+        .masonry-item:nth-child(2) { grid-row: span 2; }
+        .masonry-item:nth-child(3) { grid-column: span 1; }
+
+        /* Estilo para imágenes con tono atlántico */
+        .img-overlay {
+            position: relative;
+            overflow: hidden;
+        }
+        .img-overlay::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(21, 71, 52, 0.4), transparent);
+            pointer-events: none;
+        }
     </style>
 
-    <!-- SCHEMA.ORG (SEO) -->
+    <!-- JSON-LD SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
           "@type": "Organization",
-          "@id": "https://tirsocerqueira.github.io/openclaw_projects/#organization",
           "name": "La Lata en Casa",
           "url": "https://tirsocerqueira.github.io/openclaw_projects/",
           "logo": "https://tirsocerqueira.github.io/openclaw_projects/logo.png",
-          "description": "Distribuidora de Conservas Pay Pay. Especialistas en conservas gallegas premium de Vigo.",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+34-604-000-000",
+            "contactType": "Atención al cliente"
+          },
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Vigo",
             "addressRegion": "Galicia",
             "addressCountry": "ES"
-          },
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+34-604-000-000",
-            "contactType": "customer service"
           }
         },
         {
           "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Inicio",
-              "item": "https://tirsocerqueira.github.io/openclaw_projects/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Sobre Pay Pay",
-              "item": "https://tirsocerqueira.github.io/openclaw_projects/sobre-nosotros"
-            }
-          ]
+          "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://tirsocerqueira.github.io/openclaw_projects/"
+          },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Sobre Pay Pay"
+          }]
         }
       ]
     }
     </script>
 </head>
-<body class="bg-marfil text-grafito font-sans leading-relaxed selection:bg-dorado selection:text-white">
+<body class="bg-marfil text-grafito font-sans antialiased overflow-x-hidden selection:bg-atlantico selection:text-white">
 
-    <!-- 1. TOP BAR -->
-    <div class="bg-atlantico text-marfil text-[10px] md:text-xs h-10 flex items-center justify-between px-6 md:px-16 border-b border-white/10 uppercase tracking-widest font-medium">
-        <div class="flex items-center gap-2">
-            <span class="w-1.5 h-1.5 bg-dorado rounded-full animate-pulse"></span>
-            <span>Envío gratis a partir de 49€ · Entrega en 24/48h</span>
-        </div>
+    <!-- 1. TOP BAR (40px) -->
+    <div class="bg-atlantico text-marfil text-[10px] md:text-xs h-10 flex items-center justify-between px-6 md:px-16 uppercase tracking-widest font-medium z-[60] relative border-b border-white/5">
+        <p class="flex items-center gap-2">
+            <span class="w-1 h-1 bg-dorado rounded-full"></span>
+            Envío gratis a partir de 49€ · Entrega en 24/48h
+        </p>
         <div class="flex gap-6 items-center">
             <a href="https://wa.me/34604000000" class="hover:text-dorado transition">WhatsApp 604 000 000</a>
-            <a href="#" class="hidden sm:inline hover:text-dorado transition">Mi cuenta</a>
+            <span class="hidden md:inline opacity-30">|</span>
+            <a href="#" class="hidden md:inline hover:text-dorado transition">Mi cuenta</a>
         </div>
     </div>
 
-    <!-- 2. HEADER -->
-    <header id="main-nav" class="sticky top-0 z-50 bg-marfil/90 backdrop-blur-md transition-all duration-500">
-        <nav class="container mx-auto px-6 md:px-16 h-24 flex items-center justify-between">
+    <!-- 2. HEADER STICKY -->
+    <header id="main-header" class="sticky top-0 z-50 bg-marfil/90 backdrop-blur-md transition-all duration-500 py-4 md:py-6">
+        <nav class="container mx-auto px-6 md:px-16 flex items-center justify-between">
             <!-- Logo -->
-            <a href="/" class="flex flex-col">
+            <a href="/" class="flex flex-col group">
                 <span class="text-2xl md:text-3xl font-serif font-bold text-atlantico leading-none tracking-tight">LA LATA EN CASA</span>
-                <span class="text-[9px] uppercase tracking-[0.4em] text-dorado font-semibold mt-1">Gourmet Atlántico</span>
+                <span class="text-[9px] uppercase tracking-[0.4em] text-dorado font-bold mt-1">Gourmet Atlántico</span>
             </a>
-
-            <!-- Menú Central (Desktop) -->
-            <ul class="hidden lg:flex items-center gap-10 font-medium text-atlantico/70 text-xs uppercase tracking-widest">
-                <li><a href="#" class="hover:text-dorado transition py-2 border-b border-transparent hover:border-dorado">Conservas</a></li>
-                <li><a href="#" class="hover:text-dorado transition py-2 border-b border-transparent hover:border-dorado">Packs Gourmet</a></li>
-                <li><a href="#" class="hover:text-dorado transition py-2 border-b border-transparent hover:border-dorado">Regalos</a></li>
-                <li><a href="#" class="text-atlantico border-b border-atlantico py-2 font-semibold">Sobre Pay Pay</a></li>
-                <li><a href="#" class="hover:text-dorado transition py-2 border-b border-transparent hover:border-dorado">Blog</a></li>
-                <li><a href="#" class="hover:text-dorado transition py-2 border-b border-transparent hover:border-dorado">Contacto</a></li>
+            
+            <!-- Menu -->
+            <ul class="hidden lg:flex items-center gap-12 font-medium text-atlantico/70 text-[11px] uppercase tracking-[0.2em]">
+                <li><a href="#" class="hover:text-atlantico transition relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-dorado hover:after:w-full after:transition-all">Conservas</a></li>
+                <li><a href="#" class="hover:text-atlantico transition relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-dorado hover:after:w-full after:transition-all">Packs Gourmet</a></li>
+                <li><a href="#" class="hover:text-atlantico transition relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-dorado hover:after:w-full after:transition-all">Regalos</a></li>
+                <li class="relative">
+                    <a href="#" class="text-atlantico font-bold after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-dorado">Sobre Pay Pay</a>
+                </li>
+                <li><a href="#" class="hover:text-atlantico transition">Blog</a></li>
+                <li><a href="#" class="hover:text-atlantico transition">Contacto</a></li>
             </ul>
 
-            <!-- Acciones -->
+            <!-- Actions -->
             <div class="flex items-center gap-6">
-                <button aria-label="Buscar" class="text-atlantico hover:text-dorado transition">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <button aria-label="Búsqueda" class="text-atlantico hover:text-dorado transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </button>
-                <button aria-label="Ver carrito" class="text-atlantico hover:text-dorado transition relative">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
-                    <span class="absolute -top-2 -right-2 bg-dorado text-white text-[9px] w-4 h-4 flex items-center justify-center rounded-full font-bold">0</span>
+                <button aria-label="Carrito" class="text-atlantico hover:text-dorado transition relative">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                    <span class="absolute -top-1.5 -right-1.5 bg-dorado text-white text-[9px] w-4 h-4 flex items-center justify-center rounded-full font-bold">0</span>
                 </button>
-                <!-- Menú Mobile -->
-                <button class="lg:hidden text-atlantico" id="mobile-menu-btn">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <button id="mobile-menu-btn" class="lg:hidden text-atlantico" aria-label="Menu mobile">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
         </nav>
     </header>
 
-    <!-- 3. HERO EMOCIONAL -->
-    <section class="relative min-h-[75vh] md:min-h-[85vh] flex items-center bg-white overflow-hidden">
-        <div class="container mx-auto px-6 md:px-16 grid md:grid-cols-2 gap-16 items-center py-16 md:py-0">
-            <!-- Texto Hero -->
-            <div class="reveal relative z-10">
-                <nav class="flex text-[10px] uppercase tracking-widest text-grafito/40 mb-8" aria-label="Breadcrumb">
-                    <ol class="flex list-none p-0">
-                        <li class="flex items-center"><a href="/">Inicio</a><span class="mx-2">/</span></li>
-                        <li class="text-dorado">Sobre Pay Pay</li>
-                    </ol>
-                </nav>
-                <span class="text-dorado font-bold uppercase tracking-[0.3em] text-[11px] mb-4 block">Desde Vigo, Galicia</span>
+    <!-- 3. HERO EMOCIONAL (75-85vh) -->
+    <section class="min-h-[75vh] md:min-h-[85vh] flex items-center overflow-hidden bg-white">
+        <div class="container mx-auto px-6 md:px-16 grid lg:grid-cols-2 gap-16 items-center py-16 lg:py-0">
+            <div class="reveal">
+                <span class="text-dorado font-bold uppercase tracking-[0.3em] text-[11px] mb-6 block">Desde Vigo, Galicia</span>
                 <h1 class="text-5xl md:text-8xl font-serif text-atlantico leading-[0.95] mb-8 tracking-tighter">Conservas gallegas seleccionadas desde 1981</h1>
-                <p class="text-lg md:text-xl text-grafito/80 mb-10 max-w-lg leading-relaxed font-light">
-                    Trabajamos con <strong>Conservas Pay Pay</strong>, una marca gallega con más de 40 años de historia, especializada en tesoros del mar elaborados con ingredientes de primera calidad.
+                <p class="text-lg md:text-xl text-grafito/70 mb-12 max-w-lg leading-relaxed font-light">
+                    En <strong>La Lata en Casa</strong> somos guardianes de una tradición de más de 40 años. Trabajamos mano a mano con <strong>Conservas Pay Pay</strong> para llevar la excelencia de las rías gallegas a los paladares más exigentes.
                 </p>
                 
-                <div class="flex flex-wrap gap-10 mb-12 border-t border-gray-100 pt-10">
-                    <div class="flex flex-col gap-2">
-                        <span class="text-dorado text-2xl">⚓</span>
-                        <span class="text-[10px] uppercase font-bold tracking-widest">Origen Gallego</span>
+                <div class="flex flex-wrap gap-12 mb-12 pt-8 border-t border-gray-100">
+                    <div class="flex flex-col items-start gap-3">
+                        <div class="w-10 h-10 flex items-center justify-center bg-marfil rounded-full">⚓</div>
+                        <span class="text-[10px] uppercase font-bold tracking-widest text-atlantico/60 leading-none">Origen<br>Gallego</span>
                     </div>
-                    <div class="flex flex-col gap-2">
-                        <span class="text-dorado text-2xl">🏆</span>
-                        <span class="text-[10px] uppercase font-bold tracking-widest">Calidad Premium</span>
+                    <div class="flex flex-col items-start gap-3">
+                        <div class="w-10 h-10 flex items-center justify-center bg-marfil rounded-full">💎</div>
+                        <span class="text-[10px] uppercase font-bold tracking-widest text-atlantico/60 leading-none">Calidad<br>Premium</span>
                     </div>
-                    <div class="flex flex-col gap-2">
-                        <span class="text-dorado text-2xl">🌊</span>
-                        <span class="text-[10px] uppercase font-bold tracking-widest">Compromiso</span>
+                    <div class="flex flex-col items-start gap-3">
+                        <div class="w-10 h-10 flex items-center justify-center bg-marfil rounded-full">🌊</div>
+                        <span class="text-[10px] uppercase font-bold tracking-widest text-atlantico/60 leading-none">Compromiso<br>Sostenible</span>
                     </div>
                 </div>
 
-                <a href="#tienda" class="inline-block bg-atlantico text-white px-12 py-5 font-semibold uppercase tracking-widest text-xs hover:bg-dorado transition-all duration-500 shadow-2xl shadow-atlantico/20">
-                    Descubrir la tienda
+                <a href="#tienda" class="inline-flex items-center justify-center bg-atlantico text-white px-12 py-5 font-bold uppercase tracking-widest text-xs hover:bg-dorado transition-all duration-500 shadow-2xl shadow-atlantico/20 group">
+                    <span>Descubrir la tienda</span>
+                    <svg class="w-4 h-4 ml-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </a>
             </div>
-
-            <!-- Imagen Hero -->
+            
             <div class="relative reveal delay-300">
-                <div class="absolute -top-10 -right-10 w-64 h-64 bg-marfil rounded-full -z-10 opacity-50"></div>
-                <div class="aspect-[4/5] bg-atlantico relative shadow-2xl overflow-hidden group">
-                    <!-- Placeholder de lata premium abierta -->
-                    <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&q=80&w=1200" alt="Lata premium de sardinas Pay Pay abierta en mesa oscura" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition duration-1000">
-                    <div class="absolute inset-0 bg-gradient-to-t from-atlantico/60 to-transparent"></div>
+                <div class="absolute -top-12 -right-12 w-64 h-64 bg-marfil rounded-full -z-10 mix-blend-multiply opacity-60"></div>
+                <div class="img-overlay aspect-[4/5] bg-atlantico shadow-2xl relative overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1598514983318-2f638d388c3c?auto=format&fit=crop&q=80&w=1200" alt="Lata premium de conservas de pescado gourmet abierta en una mesa elegante" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-[2s]">
+                    <div class="absolute inset-0 border-[24px] border-white/5 pointer-events-none"></div>
                 </div>
-                <!-- Badge Flotante -->
-                <div class="absolute -bottom-8 -left-8 bg-white p-8 shadow-xl max-w-[200px] hidden lg:block">
-                    <p class="text-atlantico font-serif italic text-2xl leading-none mb-2">Sabor</p>
-                    <p class="text-grafito text-[10px] uppercase tracking-widest font-bold">100% Atlántico</p>
+                <!-- Badge -->
+                <div class="absolute -bottom-6 -left-6 bg-white p-8 shadow-2xl hidden md:block">
+                    <p class="text-atlantico font-serif italic text-3xl leading-none">Vigo, 1981</p>
+                    <p class="text-[9px] uppercase font-bold tracking-widest text-dorado mt-2">Legado Conservero</p>
                 </div>
             </div>
         </div>
@@ -247,32 +248,28 @@
 
     <!-- 4. NUESTRA HISTORIA -->
     <section class="py-32 bg-marfil relative overflow-hidden">
-        <div class="container mx-auto px-6 md:px-16 grid md:grid-cols-2 gap-20 items-center">
-            <!-- Imagen Sepia -->
-            <div class="relative reveal">
+        <div class="container mx-auto px-6 md:px-16 grid lg:grid-cols-2 gap-24 items-center">
+            <div class="relative reveal order-2 lg:order-1">
                 <div class="aspect-square bg-gray-200 overflow-hidden shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1551632432-c735e829942b?auto=format&fit=crop&q=80&w=1200" alt="Vista histórica de la Ría de Vigo con barcos de pesca" class="w-full h-full object-cover sepia-filter">
+                    <img src="https://images.unsplash.com/photo-1599599810769-8bf551732e4d?auto=format&fit=crop&q=80&w=1200" alt="Latas de conservas de pescado tradicionales gallegas" class="w-full h-full object-cover grayscale opacity-80 sepia-[0.3]">
                 </div>
-                <div class="absolute -bottom-6 -right-6 w-full h-full border-2 border-dorado/30 -z-10 translate-x-3 translate-y-3"></div>
+                <div class="absolute inset-0 border-[20px] border-marfil/50 pointer-events-none"></div>
+                <div class="absolute -bottom-8 -right-8 w-48 h-48 border border-dorado/30 -z-10"></div>
             </div>
             
-            <!-- Contenido Historia -->
-            <div class="reveal delay-200">
-                <h2 class="text-4xl md:text-6xl font-serif text-atlantico mb-10 leading-tight">De Vigo para todo el mundo</h2>
-                <div class="space-y-8 text-grafito/80 text-lg leading-relaxed font-light">
+            <div class="reveal delay-200 order-1 lg:order-2">
+                <h2 class="text-4xl md:text-6xl font-serif text-atlantico mb-10 leading-tight italic">De Vigo para todo el mundo</h2>
+                <div class="space-y-8 text-grafito/80 text-lg md:text-xl font-light leading-relaxed">
                     <p>
-                        <strong>Pay Pay</strong> nació en el corazón de Vigo en 1981, fruto del sueño de una familia con generaciones dedicadas al arte de la conserva en las rías gallegas. Nuestra cuna es el Atlántico, y nuestro idioma es el de la marea.
+                        <strong>Pay Pay</strong> nació en el corazón de Vigo en 1981, de la mano de una familia conservera con una visión clara: elevar la humilde conserva a la categoría de joya gastronómica. 
                     </p>
                     <p>
-                        Desde entonces, mantenemos intacto el mismo compromiso: seleccionar solo las mejores capturas de nuestras costas para ofrecer conservas elaboradas de manera tradicional, con ingredientes de primera calidad y respetando el sabor auténtico del mar.
-                    </p>
-                    <p class="italic font-serif text-atlantico text-xl">
-                        "En cada lata de Pay Pay no solo viaja pescado o marisco, viaja un pedazo de nuestra historia y el esfuerzo de nuestra gente."
+                        En un rincón privilegiado del Atlántico, donde la marea marca el ritmo de la vida, aprendimos que el tiempo y la paciencia son los ingredientes secretos de la excelencia. Hoy, en <strong>La Lata en Casa</strong>, mantenemos vivo ese compromiso, seleccionando cada lote para que el sabor auténtico de nuestras rías llegue intacto a tu mesa.
                     </p>
                 </div>
-                <button class="mt-12 group flex items-center gap-4 text-atlantico font-bold uppercase tracking-widest text-xs">
-                    <span class="border-b-2 border-dorado pb-1">Conoce más sobre Pay Pay</span>
-                    <svg class="w-4 h-4 group-hover:translate-x-2 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                <button class="mt-12 group flex items-center gap-4 text-atlantico font-bold uppercase tracking-widest text-xs btn-premium pb-2">
+                    Nuestra alianza con Pay Pay
+                    <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </button>
             </div>
         </div>
@@ -281,246 +278,213 @@
     <!-- 5. NUESTROS VALORES -->
     <section class="py-32 bg-white">
         <div class="container mx-auto px-6 md:px-16">
-            <div class="max-w-3xl mb-20 reveal">
-                <h2 class="text-4xl md:text-6xl font-serif text-atlantico mb-6">Valores que nos definen</h2>
-                <p class="text-lg text-grafito/60">No somos una tienda más. Somos el puente entre la lonja de Vigo y tu mesa gourmet.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-4 gap-10">
-                <!-- Valor 1 -->
-                <div class="group p-10 bg-marfil hover:bg-atlantico transition duration-500 hover-lift reveal">
-                    <div class="text-dorado mb-8 group-hover:text-white transition">
-                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-serif text-atlantico group-hover:text-white transition mb-4">Selección cuidadosa</h3>
-                    <p class="text-sm text-grafito/60 group-hover:text-white/70 transition leading-relaxed">Solo las mejores piezas de cada captura superan nuestro estándar. Calidad por encima de cantidad.</p>
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- V1 -->
+                <div class="group p-10 bg-marfil/30 border-b-2 border-transparent hover:border-dorado transition-all duration-500 reveal hover-lift">
+                    <span class="text-dorado text-4xl block mb-8 opacity-40 group-hover:opacity-100 transition">01</span>
+                    <h3 class="text-2xl font-serif text-atlantico mb-4">Selección cuidadosa</h3>
+                    <p class="text-sm text-grafito/60 leading-relaxed font-light">Elegimos únicamente los calibres más excelsos de cada campaña, asegurando una textura y sabor inigualables.</p>
                 </div>
-                <!-- Valor 2 -->
-                <div class="group p-10 bg-marfil hover:bg-atlantico transition duration-500 hover-lift reveal delay-100">
-                    <div class="text-dorado mb-8 group-hover:text-white transition">
-                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-serif text-atlantico group-hover:text-white transition mb-4">Artesanía</h3>
-                    <p class="text-sm text-grafito/60 group-hover:text-white/70 transition leading-relaxed">Nuestras expertas conserveras enlatan a mano cada pieza, respetando los métodos de 1981.</p>
+                <!-- V2 -->
+                <div class="group p-10 bg-marfil/30 border-b-2 border-transparent hover:border-dorado transition-all duration-500 reveal delay-100 hover-lift">
+                    <span class="text-dorado text-4xl block mb-8 opacity-40 group-hover:opacity-100 transition">02</span>
+                    <h3 class="text-2xl font-serif text-atlantico mb-4">Artesanía</h3>
+                    <p class="text-sm text-grafito/60 leading-relaxed font-light">Nuestras expertas conserveras enlatan a mano cada pieza, siguiendo los métodos que definieron a la marca en 1981.</p>
                 </div>
-                <!-- Valor 3 -->
-                <div class="group p-10 bg-marfil hover:bg-atlantico transition duration-500 hover-lift reveal delay-200">
-                    <div class="text-dorado mb-8 group-hover:text-white transition">
-                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-serif text-atlantico group-hover:text-white transition mb-4">Sostenibilidad</h3>
-                    <p class="text-sm text-grafito/60 group-hover:text-white/70 transition leading-relaxed">Apoyamos la pesca de bajura y artesanal para asegurar el futuro de nuestras rías.</p>
+                <!-- V3 -->
+                <div class="group p-10 bg-marfil/30 border-b-2 border-transparent hover:border-dorado transition-all duration-500 reveal delay-200 hover-lift">
+                    <span class="text-dorado text-4xl block mb-8 opacity-40 group-hover:opacity-100 transition">03</span>
+                    <h3 class="text-2xl font-serif text-atlantico mb-4">Sostenibilidad</h3>
+                    <p class="text-sm text-grafito/60 leading-relaxed font-light">Respetamos los ciclos naturales del mar de Galicia, apoyando la pesca de bajura y las artes tradicionales.</p>
                 </div>
-                <!-- Valor 4 -->
-                <div class="group p-10 bg-marfil hover:bg-atlantico transition duration-500 hover-lift reveal delay-300">
-                    <div class="text-dorado mb-8 group-hover:text-white transition">
-                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9l-4 4v-4H3a2 2 0 01-2-2V10a2 2 0 012-2h2M9 21V5a2 2 0 012-2h10a2 2 0 012 2v16l-4-4H9"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-serif text-atlantico group-hover:text-white transition mb-4">Cercanía</h3>
-                    <p class="text-sm text-grafito/60 group-hover:text-white/70 transition leading-relaxed">Somos una empresa familiar. Tu confianza es nuestro bien más preciado.</p>
+                <!-- V4 -->
+                <div class="group p-10 bg-marfil/30 border-b-2 border-transparent hover:border-dorado transition-all duration-500 reveal delay-300 hover-lift">
+                    <span class="text-dorado text-4xl block mb-8 opacity-40 group-hover:opacity-100 transition">04</span>
+                    <h3 class="text-2xl font-serif text-atlantico mb-4">Cercanía</h3>
+                    <p class="text-sm text-grafito/60 leading-relaxed font-light">Somos una empresa familiar. Estamos en Vigo, donde ocurre la magia, para ofrecerte un servicio directo y honesto.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 6. ASÍ TRABAJAMOS -->
-    <section class="py-32 bg-atlantico text-white">
-        <div class="container mx-auto px-6 md:px-16 text-center">
-            <h2 class="text-4xl md:text-6xl font-serif mb-24 reveal">Nuestra promesa artesanal</h2>
-            
-            <div class="grid md:grid-cols-4 gap-12">
-                <!-- Paso 1 -->
-                <div class="relative reveal process-connector">
-                    <div class="w-16 h-16 rounded-full border border-dorado bg-atlantico flex items-center justify-center mx-auto mb-8 relative z-10">
-                        <span class="text-dorado font-serif text-2xl italic">1</span>
+    <section class="py-32 bg-atlantico text-white relative">
+        <div class="container mx-auto px-6 md:px-16">
+            <h2 class="text-4xl md:text-6xl font-serif mb-24 text-center reveal">El arte de conservar el tiempo</h2>
+            <div class="grid md:grid-cols-4 gap-12 text-center">
+                <div class="relative reveal process-line">
+                    <div class="w-16 h-16 rounded-full border border-dorado/30 flex items-center justify-center mx-auto mb-8 bg-atlantico relative z-10 group hover:border-dorado transition duration-500">
+                        <span class="text-dorado font-serif text-2xl italic group-hover:scale-110 transition">1</span>
                     </div>
-                    <h4 class="text-2xl font-serif mb-4">Seleccionamos</h4>
-                    <p class="text-white/60 text-sm font-light px-6">Directo de las lonjas gallegas al alba. Solo producto fresco de temporada.</p>
+                    <h4 class="text-xl font-serif mb-4">Seleccionamos</h4>
+                    <p class="text-white/50 text-sm font-light px-6">Directo de las lonjas gallegas al alba. Solo producto fresco de temporada.</p>
                 </div>
-                <!-- Paso 2 -->
-                <div class="relative reveal delay-100 process-connector">
-                    <div class="w-16 h-16 rounded-full border border-dorado bg-atlantico flex items-center justify-center mx-auto mb-8 relative z-10">
-                        <span class="text-dorado font-serif text-2xl italic">2</span>
+                <div class="relative reveal delay-100 process-line">
+                    <div class="w-16 h-16 rounded-full border border-dorado/30 flex items-center justify-center mx-auto mb-8 bg-atlantico relative z-10 group hover:border-dorado transition duration-500">
+                        <span class="text-dorado font-serif text-2xl italic group-hover:scale-110 transition">2</span>
                     </div>
-                    <h4 class="text-2xl font-serif mb-4">Elaboramos</h4>
-                    <p class="text-white/60 text-sm font-light px-6">Limpieza a mano y cocción perfecta para mantener textura y sabor.</p>
+                    <h4 class="text-xl font-serif mb-4">Elaboramos</h4>
+                    <p class="text-white/50 text-sm font-light px-6">Limpieza a mano y cocción exacta para mantener la firmeza y el sabor puro.</p>
                 </div>
-                <!-- Paso 3 -->
-                <div class="relative reveal delay-200 process-connector">
-                    <div class="w-16 h-16 rounded-full border border-dorado bg-atlantico flex items-center justify-center mx-auto mb-8 relative z-10">
-                        <span class="text-dorado font-serif text-2xl italic">3</span>
+                <div class="relative reveal delay-200 process-line">
+                    <div class="w-16 h-16 rounded-full border border-dorado/30 flex items-center justify-center mx-auto mb-8 bg-atlantico relative z-10 group hover:border-dorado transition duration-500">
+                        <span class="text-dorado font-serif text-2xl italic group-hover:scale-110 transition">3</span>
                     </div>
-                    <h4 class="text-2xl font-serif mb-4">Enlatamos</h4>
-                    <p class="text-white/60 text-sm font-light px-6">Empacado pieza a pieza con el mejor Aceite de Oliva Virgen Extra.</p>
+                    <h4 class="text-xl font-serif mb-4">Enlatamos</h4>
+                    <p class="text-white/50 text-sm font-light px-6">Empacado pieza a pieza con Aceite de Oliva Virgen Extra de primera presión.</p>
                 </div>
-                <!-- Paso 4 -->
                 <div class="relative reveal delay-300">
-                    <div class="w-16 h-16 rounded-full border border-dorado bg-atlantico flex items-center justify-center mx-auto mb-8 relative z-10">
-                        <span class="text-dorado font-serif text-2xl italic">4</span>
+                    <div class="w-16 h-16 rounded-full border border-dorado/30 flex items-center justify-center mx-auto mb-8 bg-atlantico relative z-10 group hover:border-dorado transition duration-500">
+                        <span class="text-dorado font-serif text-2xl italic group-hover:scale-110 transition">4</span>
                     </div>
-                    <h4 class="text-2xl font-serif mb-4">Enviamos</h4>
-                    <p class="text-white/60 text-sm font-light px-6">De Vigo a tu hogar en 24h, con packaging sostenible y protegido.</p>
+                    <h4 class="text-xl font-serif mb-4">Enviamos</h4>
+                    <p class="text-white/50 text-sm font-light px-6">De Vigo a tu hogar en 24h, con un embalaje premium que protege tu tesoro.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 7. NUESTRO ENTORNO (Galería Masonry) -->
+    <!-- 7. NUESTRO ENTORNO (Gallery) -->
     <section class="py-32 bg-white">
         <div class="container mx-auto px-6 md:px-16">
-            <h2 class="text-4xl md:text-6xl font-serif text-atlantico mb-16 text-center reveal">Inspirados por el entorno</h2>
-            
-            <div class="masonry-grid reveal">
-                <div class="masonry-item overflow-hidden relative group">
-                    <img src="https://images.unsplash.com/photo-1544434250-9a250393046d?auto=format&fit=crop&q=80&w=800" alt="Vista aérea de Vigo y su puerto" class="w-full h-full object-cover group-hover:scale-110 transition duration-1000">
-                    <div class="absolute inset-0 bg-atlantico/20 opacity-0 group-hover:opacity-100 transition"></div>
+            <h2 class="text-4xl md:text-6xl font-serif text-atlantico mb-16 reveal text-center">Inspiración Atlántica</h2>
+            <div class="masonry reveal">
+                <div class="masonry-item img-overlay group overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1598514983318-2f638d388c3c?auto=format&fit=crop&q=80&w=800" alt="Conservas de pescado gourmet" class="w-full h-full object-cover group-hover:scale-110 transition duration-[2s]">
                 </div>
-                <div class="masonry-item overflow-hidden relative group">
-                    <img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?auto=format&fit=crop&q=80&w=800" alt="Costa gallega con rocas y mar agitado" class="w-full h-full object-cover group-hover:scale-110 transition duration-1000">
+                <div class="masonry-item img-overlay group overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&q=80&w=800" alt="Latas de conservas premium" class="w-full h-full object-cover group-hover:scale-110 transition duration-[2s]">
                 </div>
-                <div class="masonry-item overflow-hidden relative group">
-                    <img src="https://images.unsplash.com/photo-1528650355320-f570081d7637?auto=format&fit=crop&q=80&w=800" alt="Pescador artesanal gallego con redes" class="w-full h-full object-cover group-hover:scale-110 transition duration-1000">
+                <div class="masonry-item img-overlay group overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1599599810769-8bf551732e4d?auto=format&fit=crop&q=80&w=1200" alt="Detalle de conservas de pescado" class="w-full h-full object-cover group-hover:scale-110 transition duration-[2s]">
                 </div>
-                <div class="masonry-item overflow-hidden relative group">
-                    <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&q=80&w=800" alt="Plato gourmet con conservas Pay Pay" class="w-full h-full object-cover group-hover:scale-110 transition duration-1000">
+                <div class="masonry-item img-overlay group overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=800" alt="Plato gourmet con conservas" class="w-full h-full object-cover group-hover:scale-110 transition duration-[2s]">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 8. CTA FINAL -->
-    <section class="py-32 bg-atlantico relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-[-20deg] translate-x-20"></div>
-        <div class="container mx-auto px-6 text-center relative z-10 reveal">
-            <h2 class="text-5xl md:text-7xl font-serif text-white mb-8 leading-tight">¿Quieres probar lo mejor de nuestras rías?</h2>
-            <p class="text-marfil/70 text-xl md:text-2xl mb-12 max-w-2xl mx-auto font-light">
-                Descubre nuestras conservas y packs gourmet seleccionados en Vigo. Calidad artesanal directa a tu despensa.
+    <section class="py-32 bg-atlantico text-marfil text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-white/5 skew-y-6 translate-y-1/2"></div>
+        <div class="container mx-auto px-6 relative z-10 reveal">
+            <h2 class="text-5xl md:text-7xl font-serif mb-8 leading-tight">¿Quieres probar lo mejor de nuestras rías?</h2>
+            <p class="text-marfil/70 text-xl mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+                Descubre nuestra selección exclusiva de conservas gallegas y packs gourmet. Del mar de Vigo a tu despensa.
             </p>
-            <a href="#tienda" class="inline-block bg-dorado text-white px-16 py-6 font-bold uppercase tracking-widest text-sm hover:bg-white hover:text-atlantico transition-all duration-500 shadow-3xl">
+            <a href="#" class="inline-block bg-dorado text-white px-16 py-6 font-bold uppercase tracking-widest text-sm hover:bg-white hover:text-atlantico transition-all duration-500 shadow-2xl">
                 Ir a la tienda
             </a>
         </div>
     </section>
 
     <!-- 9. BANDA DE CONFIANZA -->
-    <section class="bg-marfil border-y border-dorado/20 py-10">
-        <div class="container mx-auto px-6 md:px-16 grid grid-cols-2 md:grid-cols-4 gap-12">
-            <div class="flex items-center gap-4 reveal">
-                <span class="text-dorado text-2xl">🚚</span>
+    <section class="bg-marfil border-y border-dorado/10 py-12">
+        <div class="container mx-auto px-6 md:px-16 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+            <div class="flex flex-col items-center gap-4 reveal">
+                <span class="text-dorado text-3xl">🚚</span>
                 <div>
                     <p class="text-[10px] uppercase font-bold tracking-widest text-atlantico">Envío 24/48h</p>
-                    <p class="text-[9px] text-grafito/60">Toda la península</p>
+                    <p class="text-[9px] text-grafito/50 mt-1 italic">Península y Baleares</p>
                 </div>
             </div>
-            <div class="flex items-center gap-4 reveal delay-100">
-                <span class="text-dorado text-2xl">🌿</span>
+            <div class="flex flex-col items-center gap-4 reveal delay-100">
+                <span class="text-dorado text-3xl">🌊</span>
                 <div>
                     <p class="text-[10px] uppercase font-bold tracking-widest text-atlantico">Envío gratis +49€</p>
-                    <p class="text-[9px] text-grafito/60">Envíos nacionales</p>
+                    <p class="text-[9px] text-grafito/50 mt-1 italic">Sin complicaciones</p>
                 </div>
             </div>
-            <div class="flex items-center gap-4 reveal delay-200">
-                <span class="text-dorado text-2xl">🛡</span>
+            <div class="flex flex-col items-center gap-4 reveal delay-200">
+                <span class="text-dorado text-3xl">🛡</span>
                 <div>
                     <p class="text-[10px] uppercase font-bold tracking-widest text-atlantico">Pago Seguro</p>
-                    <p class="text-[9px] text-grafito/60">Encriptación SSL</p>
+                    <p class="text-[9px] text-grafito/50 mt-1 italic">Tarjeta, PayPal, Bizum</p>
                 </div>
             </div>
-            <div class="flex items-center gap-4 reveal delay-300">
-                <span class="text-dorado text-2xl">👤</span>
+            <div class="flex flex-col items-center gap-4 reveal delay-300">
+                <span class="text-dorado text-3xl">⚓</span>
                 <div>
-                    <p class="text-[10px] uppercase font-bold tracking-widest text-atlantico">Atención Directa</p>
-                    <p class="text-[9px] text-grafito/60">Gente real al teléfono</p>
+                    <p class="text-[10px] uppercase font-bold tracking-widest text-atlantico">Garantía Vigo</p>
+                    <p class="text-[9px] text-grafito/50 mt-1 italic">Directo de origen</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 10. FOOTER -->
-    <footer class="bg-atlantico_oscuro text-marfil/50 py-24">
-        <div class="container mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-4 gap-16">
-            <!-- Info Marca -->
+    <footer class="bg-atlantico_oscuro text-marfil/40 py-24">
+        <div class="container mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-4 gap-20">
             <div>
                 <h2 class="text-2xl font-serif text-white mb-8">LA LATA EN CASA</h2>
-                <p class="text-sm leading-relaxed mb-8">
-                    Desde 1981, seleccionamos lo mejor del mar de Galicia para llevarlo a tu mesa. Tradición, artesanía y pasión atlántica en cada lata.
+                <p class="text-sm leading-relaxed mb-8 font-light">
+                    Guardianes del sabor atlántico desde 1981. Seleccionamos lo mejor del mar de Galicia para los amantes de la buena mesa.
                 </p>
                 <div class="flex gap-4">
-                    <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-dorado hover:text-dorado transition">
+                    <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-dorado hover:text-white transition">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                     </a>
                 </div>
             </div>
-
-            <!-- Enlaces Tienda -->
             <div>
-                <h4 class="text-white font-bold mb-8 text-[10px] uppercase tracking-widest">Tienda Online</h4>
-                <ul class="space-y-4 text-xs font-medium">
-                    <li><a href="#" class="hover:text-dorado transition">Mejillones en Escabeche</a></li>
-                    <li><a href="#" class="hover:text-dorado transition">Sardinillas en AOVE</a></li>
-                    <li><a href="#" class="hover:text-dorado transition">Ventresca de Atún Claro</a></li>
-                    <li><a href="#" class="hover:text-dorado transition">Packs Regalo Gourmet</a></li>
+                <h4 class="text-white font-bold mb-8 text-[10px] uppercase tracking-widest leading-none">Categorías</h4>
+                <ul class="space-y-4 text-xs">
+                    <li><a href="#" class="hover:text-dorado transition">Berberechos & Almejas</a></li>
+                    <li><a href="#" class="hover:text-dorado transition">Mejillones & Pulpo</a></li>
+                    <li><a href="#" class="hover:text-dorado transition">Sardinas & Bonito</a></li>
+                    <li><a href="#" class="hover:text-dorado transition">Packs Gourmet</a></li>
                 </ul>
             </div>
-
-            <!-- Enlaces Info -->
             <div>
-                <h4 class="text-white font-bold mb-8 text-[10px] uppercase tracking-widest">Información</h4>
-                <ul class="space-y-4 text-xs font-medium">
+                <h4 class="text-white font-bold mb-8 text-[10px] uppercase tracking-widest leading-none">Información</h4>
+                <ul class="space-y-4 text-xs">
                     <li><a href="#" class="hover:text-dorado transition">Envíos y Devoluciones</a></li>
-                    <li><a href="#" class="hover:text-dorado transition">Términos y Condiciones</a></li>
+                    <li><a href="#" class="hover:text-dorado transition">Condiciones de Venta</a></li>
                     <li><a href="#" class="hover:text-dorado transition">Aviso Legal</a></li>
-                    <li><a href="#" class="hover:text-dorado transition">Política de Privacidad</a></li>
+                    <li><a href="#" class="hover:text-dorado transition">Privacidad</a></li>
                 </ul>
             </div>
-
-            <!-- Newsletter -->
             <div>
-                <h4 class="text-white font-bold mb-8 text-[10px] uppercase tracking-widest">Suscríbete</h4>
-                <p class="text-xs mb-6 font-light">Recibe recetas atlánticas y ofertas para miembros.</p>
-                <form class="flex border-b border-white/20 pb-2">
-                    <input type="email" placeholder="Tu email" class="bg-transparent text-xs w-full outline-none focus:placeholder-transparent placeholder:text-white/20 text-white" aria-label="Email para newsletter">
-                    <button type="submit" class="text-dorado font-bold text-sm hover:translate-x-1 transition">→</button>
+                <h4 class="text-white font-bold mb-8 text-[10px] uppercase tracking-widest leading-none">Newsletter</h4>
+                <p class="text-xs mb-6 font-light">Suscríbete para recibir noticias atlánticas y ofertas exclusivas.</p>
+                <form class="flex border-b border-white/10 pb-2">
+                    <input type="email" placeholder="Tu email" class="bg-transparent text-sm w-full outline-none focus:placeholder-transparent placeholder:text-white/20">
+                    <button class="text-dorado font-bold text-sm hover:translate-x-1 transition-transform">→</button>
                 </form>
             </div>
         </div>
-
-        <!-- Copyright -->
-        <div class="container mx-auto px-6 md:px-16 mt-24 pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] font-medium tracking-widest uppercase">
+        <div class="container mx-auto px-6 md:px-16 mt-20 pt-8 border-t border-white/5 flex flex-col md:row items-center justify-between gap-4 text-[10px] font-medium tracking-[0.2em] uppercase">
             <p>© 2026 La Lata en Casa. Una selección de Conservas Pay Pay desde Vigo.</p>
-            <div class="flex gap-8">
+            <div class="flex gap-4 italic opacity-50">
                 <span>Vigo, Galicia</span>
-                <span class="text-white/20">|</span>
+                <span class="text-white/20 not-italic">|</span>
                 <span>Hecho con ⚓ por TARS</span>
             </div>
         </div>
     </footer>
 
-    <!-- SCRIPTS -->
     <script>
-        // 1. Header Sticky Effect
-        const header = document.getElementById('main-nav');
+        // Header Sticky Effect
+        const header = document.getElementById('main-header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
-                header.classList.add('shadow-xl', 'py-1', 'bg-marfil/95');
-                header.querySelector('nav').classList.replace('h-24', 'h-16');
+                header.classList.add('shadow-2xl', 'py-2');
             } else {
-                header.classList.remove('shadow-xl', 'py-1', 'bg-marfil/95');
-                header.querySelector('nav').classList.replace('h-16', 'h-24');
+                header.classList.remove('shadow-2xl', 'py-2');
             }
         });
 
-        // 2. Intersection Observer para Revelado Suave
+        // Intersection Observer for Reveal
         const observerOptions = {
             threshold: 0.15,
-            rootMargin: "0px 0px -50px 0px"
+            rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    // Una vez activado, dejamos de observar este elemento
                     observer.unobserve(entry.target);
                 }
             });
@@ -528,10 +492,10 @@
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // 3. Menú Mobile (Placeholder funcional)
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        mobileMenuBtn.addEventListener('click', () => {
-            alert('Menú lateral: Conservas, Packs, Regalos, Sobre Pay Pay, Blog, Contacto');
+        // Mobile Menu
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        mobileBtn.addEventListener('click', () => {
+            alert('Menú: Conservas, Packs, Sobre Pay Pay, Blog, Contacto');
         });
     </script>
 </body>
