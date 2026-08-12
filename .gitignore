@@ -9,3 +9,21 @@ services/api/venv/
 __pycache__/
 *.pyc
 .DS_Store
+
+# OpenClaw Internal Configuration & Metadata
+AGENTS.md
+HEARTBEAT.md
+IDENTITY.md
+SOUL.md
+TOOLS.md
+USER.md
+memory/
+config/
+openclaw-workspace-state.json
+.git/
+
+# Additional OpenClaw & workspace artifacts
+media/
+memory/
+services/
+skills/
