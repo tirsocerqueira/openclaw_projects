@@ -1,0 +1,11 @@
+# ROADMAP.md - StockVision MVP (30 días)
+
+- [x] **Fase 0:** Estructura inicial del repositorio y configuración base (En progreso)
+- [ ] **Fase 1:** Validación de negocio (`business/`)
+- [ ] **Fase 2:** Producto (`product/`)
+- [ ] **Fase 3:** Arquitectura (`architecture/`)
+- [ ] **Fase 4:** Especificaciones técnicas (`specs/`)
+- [ ] **Fase 5:** Datos y ML (`ml/`)
+- [ ] **Fase 6:** Implementación core y Docker Compose (`services/`, `docker-compose.yml`)
+- [ ] **Fase 7:** Calidad y Tests (`tests/`)
+- [ ] **Fase 8:** Material Comercial y Demo (`docs/`)

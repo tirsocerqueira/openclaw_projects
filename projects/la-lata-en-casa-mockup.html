@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Lata en Casa - Alternativas de Diseño</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap');
+        .font-serif-salvaje { font-family: 'Arvo', serif; }
+        .font-serif-ritual { font-family: 'Playfair Display', serif; }
+        .font-sans-clean { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans-clean min-h-screen flex flex-col m-0 p-0 overflow-x-hidden">
+
+    <!-- Header comparativo -->
+    <header class="bg-white border-b border-gray-200 py-4 px-8 flex justify-between items-center shadow-sm z-10">
+        <div>
+            <h1 class="text-xl font-bold text-gray-800">La Lata en Casa 🥫</h1>
+            <p class="text-xs text-gray-500">Prototipo Interactivo de Alternativas Visuales ("Quiénes Somos")</p>
+        </div>
+        <div class="text-sm font-semibold text-gray-600 bg-gray-100 px-3 py-1 rounded-full">
+            Comparativa de Conceptos
+        </div>
+    </header>
+
+    <!-- Contenedor Split Screen -->
+    <main class="flex flex-col lg:flex-row flex-1 w-full">
+
+        <!-- LADO IZQUIERDO: ORIGEN SALVAJE (AZUL / MAR / TRAZABILIDAD) -->
+        <section class="flex-1 bg-[#0b1d33] text-white flex flex-col justify-between border-b-4 lg:border-b-0 lg:border-r-4 border-gray-300 relative min-h-[90vh]">
+            <!-- Sello identificador -->
+            <div class="absolute top-4 left-4 bg-[#f26419]/90 text-white font-bold text-xs uppercase px-3 py-1 rounded tracking-widest z-10">
+                Alternativa 1: Origen Salvaje
+            </div>
+
+            <!-- Contenido del Hero -->
+            <div class="p-8 lg:p-12 flex-1 flex flex-col justify-center">
+                <div class="mb-6 opacity-80 flex items-center gap-2">
+                    <span class="text-lg">🌊</span>
+                    <span class="text-sm font-bold uppercase tracking-wider">La fuerza de las Rías Baixas</span>
+                </div>
+                
+                <h2 class="text-4xl lg:text-5xl font-serif-salvaje font-bold leading-tight mb-6">
+                    El Atlántico no se explica, <br>
+                    <span class="text-[#f26419]">se envasa.</span>
+                </h2>
+                
+                <p class="text-lg text-gray-300 mb-8 max-w-lg leading-relaxed">
+                    Nuestras conservas no nacen en despensas ordenadas, sino en la marea, el salitre y las manos de quienes madrugan para desafiar al mar gallego desde Vigo. Capturadas con artes sostenibles y enlatadas a mano en un abrir y cerrar de ojos para preservar el alma pura del océano.
+                </p>
+
+                <!-- Tarjeta de características destacadas -->
+                <div class="grid grid-cols-2 gap-4 max-w-md mb-8">
+                    <div class="bg-white/5 p-4 rounded border border-white/10">
+                        <div class="text-xl mb-1">⏱️</div>
+                        <h4 class="font-bold text-sm text-white">Fresco como el mar</h4>
+                        <p class="text-xs text-gray-400">Enlatado en menos de 12 horas desde la captura.</p>
+                    </div>
+                    <div class="bg-white/5 p-4 rounded border border-white/10">
+                        <div class="text-xl mb-1">⚓</div>
+                        <h4 class="font-bold text-sm text-white">Trazabilidad Total</h4>
+                        <p class="text-xs text-gray-400">Código QR en cada lata con el barco de origen.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <button class="bg-[#f26419] hover:bg-[#d65213] text-white font-bold px-8 py-3 rounded tracking-wider uppercase transition text-sm shadow-lg">
+                        Prueba la marea
+                    </button>
+                </div>
+            </div>
+
+            <!-- Footer inferior estilo rústico marino -->
+            <div class="bg-[#071322] p-6 border-t border-white/5 flex justify-between items-center text-xs text-gray-400">
+                <span>📍 Coordenadas: Vigo, Galicia</span>
+                <span class="flex items-center gap-1"><span class="w-2 h-2 bg-green-500 rounded-full"></span> Pesca Sostenible</span>
+            </div>
+        </section>
+
+        <!-- LADO DERECHO: RITUAL DEL APERITIVO (BORGOÑA / CALIDEZ / TRADICIÓN) -->
+        <section class="flex-1 bg-[#fffbf4] text-[#2c1a1d] flex flex-col justify-between relative min-h-[90vh]">
+            <!-- Sello identificador -->
+            <div class="absolute top-4 left-4 bg-[#58111A] text-white font-bold text-xs uppercase px-3 py-1 rounded tracking-widest z-10">
+                Alternativa 2: El Ritual del Aperitivo
+            </div>
+
+            <!-- Contenido del Hero -->
+            <div class="p-8 lg:p-12 flex-1 flex flex-col justify-center">
+                <div class="mb-6 opacity-80 flex items-center gap-2 text-[#58111A]">
+                    <span class="text-lg">🍷</span>
+                    <span class="text-sm font-bold uppercase tracking-wider">Tradición sin prisas</span>
+                </div>
+                
+                <h2 class="text-4xl lg:text-5xl font-serif-ritual font-bold leading-tight mb-6 text-[#58111A]">
+                    El arte de parar <br>
+                    <span class="italic text-[#8c2230]">el tiempo en la mesa.</span>
+                </h2>
+                
+                <p class="text-lg text-gray-700 mb-8 max-w-lg leading-relaxed font-serif-ritual">
+                    Una lata de conserva excepcional no es comida rápida; es un ritual sagrado. Es descorchar un buen vino, rodearse de amigos y redescubrir recetas centenarias cocinadas a fuego lento y maduradas con mimo en nuestra bodega de Vigo.
+                </p>
+
+                <!-- Tarjeta de características destacadas -->
+                <div class="grid grid-cols-2 gap-4 max-w-md mb-8">
+                    <div class="bg-[#58111A]/5 p-4 rounded border border-[#58111A]/10">
+                        <div class="text-xl mb-1">🥫</div>
+                        <h4 class="font-bold text-sm text-[#58111A]">Receta Centenaria</h4>
+                        <p class="text-xs text-gray-600">Escabeches y salsas secretas de la abuela.</p>
+                    </div>
+                    <div class="bg-[#58111A]/5 p-4 rounded border border-[#58111A]/10">
+                        <div class="text-xl mb-1">🥖</div>
+                        <h4 class="font-bold text-sm text-[#58111A]">Club de la Despensa</h4>
+                        <p class="text-xs text-gray-600">Suscripción mensual de latas y maridaje.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <button class="bg-[#58111A] hover:bg-[#3d0b11] text-white font-bold px-8 py-3 rounded tracking-wider uppercase transition text-sm shadow-lg">
+                        Únete al Club
+                    </button>
+                </div>
+            </div>
+
+            <!-- Footer inferior estilo vintage elegante -->
+            <div class="bg-[#f0e8da] p-6 border-t border-[#2c1a1d]/10 flex justify-between items-center text-xs text-gray-600">
+                <span class="italic">Fundada en Vigo, 1981</span>
+                <span>👨‍👩‍👧‍👦 Negocio de Familia</span>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+# Secrets & Credentials
+config/bigquery/credentials.json
+media/inbound/
+*.json
+.git-credentials
+
+# Environments
+services/api/venv/
+__pycache__/
+*.pyc
+.DS_Store
