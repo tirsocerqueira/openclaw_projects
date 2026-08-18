@@ -8,14 +8,14 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #f4f6f8;
+            background-color: #FDFBF7;
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            color: #333333;
+            color: #27272A;
         }
         .wrapper {
             width: 100%;
             table-layout: fixed;
-            background-color: #f4f6f8;
+            background-color: #FDFBF7;
             padding-bottom: 40px;
         }
         .main {
@@ -24,52 +24,40 @@
             width: 100%;
             max-width: 600px;
             border-spacing: 0;
-            color: #333333;
+            color: #27272A;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e5e5e5;
         }
         .header {
-            background-color: #0b1d33;
+            background-color: #FDFBF7;
             padding: 30px 20px;
             text-align: center;
-        }
-        .header h1 {
-            color: #ffffff;
-            font-family: Georgia, serif;
-            font-size: 24px;
-            margin: 0;
-            letter-spacing: 1px;
-        }
-        .header p {
-            color: #f26419;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin: 8px 0 0 0;
+            border-bottom: 2px solid #D97706;
         }
         .hero {
             padding: 40px 30px;
             text-align: center;
-            background-color: #fffbf4;
-            border-bottom: 1px solid #eeeeee;
+            background-color: #ffffff;
+            border-bottom: 1px solid #f0f0f0;
         }
         .hero h2 {
             font-family: Georgia, serif;
-            font-size: 28px;
-            color: #58111A;
+            font-size: 26px;
+            color: #9A3412;
             margin-top: 0;
             margin-bottom: 15px;
             line-height: 1.2;
         }
         .hero p {
-            font-size: 16px;
+            font-size: 15px;
             line-height: 1.6;
-            color: #555555;
+            color: #27272A;
             margin-bottom: 25px;
         }
         .btn {
-            background-color: #f26419;
+            background-color: #9A3412;
             color: #ffffff;
             padding: 12px 30px;
             text-decoration: none;
@@ -82,6 +70,7 @@
         }
         .section {
             padding: 30px;
+            background-color: #FDFBF7;
         }
         .product-table {
             width: 100%;
@@ -89,17 +78,17 @@
         }
         .product-td {
             padding: 15px 0;
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid #e5e5e5;
         }
         .footer {
-            background-color: #0b1d33;
-            color: #9ba3af;
+            background-color: #27272A;
+            color: #a1a1aa;
             text-align: center;
             padding: 20px;
             font-size: 12px;
         }
         .footer a {
-            color: #f26419;
+            color: #D97706;
             text-decoration: none;
         }
     </style>
@@ -107,11 +96,40 @@
 <body>
     <center class="wrapper">
         <table class="main" width="100%" cellpadding="0" cellspacing="0">
-            <!-- HEADER -->
+            <!-- HEADER CON EL LOGOTIPO SVG -->
             <tr>
                 <td class="header">
-                    <h1>LA LATA EN CASA</h1>
-                    <p>El sabor del Atlántico a tu mesa</p>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td align="center">
+                                <svg viewBox="0 0 500 250" width="220" style="display: block; margin: 0 auto;" xmlns="http://www.w3.org/2000/svg">
+                                    <g transform="translate(20, 15)">
+                                        <path d="M 50 16 C 170 0, 310 0, 410 16 C 465 34, 465 166, 410 184 C 310 202, 170 202, 50 184 C -5 166, -5 34, 50 16 Z" fill="none" stroke="#9A3412" stroke-width="1.8" opacity="0.65"/>
+                                        <path d="M 60 25 C 180 8, 300 8, 400 25 C 450 42, 450 158, 400 175 C 300 192, 180 192, 60 175 C 10 158, 10 42, 60 25 Z" fill="none" stroke="#9A3412" stroke-width="3.6" stroke-linecap="round"/>
+                                        <path d="M 75 35 C 185 20, 295 20, 385 35 C 430 48, 430 152, 385 165 C 295 180, 185 180, 75 165 C 30 152, 30 48, 75 35 Z" fill="none" stroke="#9A3412" stroke-width="1.4" stroke-dasharray="12 6" opacity="0.6"/>
+                                        <g transform="translate(35, 70) rotate(-10)">
+                                            <path d="M 10 12 C 10 4, 22 0, 42 6 L 68 18 C 76 22, 78 34, 70 42 L 62 50 C 54 56, 42 54, 34 46 L 16 32 C 8 26, 10 18, 10 12 Z" fill="#ffffff" stroke="#D97706" stroke-width="2.4"/>
+                                            <circle cx="50" cy="32" r="11" fill="none" stroke="#D97706" stroke-width="2.4"/>
+                                            <circle cx="24" cy="18" r="4" fill="#D97706"/>
+                                            <circle cx="18" cy="32" r="3" fill="#D97706"/>
+                                        </g>
+                                        <g transform="translate(415, 62)">
+                                            <line x1="0" y1="0" x2="0" y2="76" stroke="#9A3412" stroke-width="3.6" stroke-linecap="round"/>
+                                            <line x1="10" y1="10" x2="10" y2="66" stroke="#9A3412" stroke-width="2.6" stroke-linecap="round" opacity="0.8"/>
+                                            <line x1="18" y1="20" x2="18" y2="56" stroke="#9A3412" stroke-width="1.8" stroke-linecap="round" opacity="0.6"/>
+                                        </g>
+                                        <g transform="translate(230, 100)" text-anchor="middle">
+                                            <text x="0" y="-42" fill="#27272A" font-size="22" font-weight="300" font-family="sans-serif" letter-spacing="6">LA</text>
+                                            <text x="0" y="-12" fill="#27272A" font-size="32" font-weight="300" font-family="sans-serif" letter-spacing="8">LATA</text>
+                                            <text x="0" y="16" fill="#27272A" font-size="20" font-weight="300" font-family="sans-serif" letter-spacing="6">EN</text>
+                                            <text x="0" y="48" fill="#27272A" font-size="34" font-weight="300" font-family="sans-serif" letter-spacing="8">CASA</text>
+                                        </g>
+                                        <text x="230" y="222" text-anchor="middle" fill="#D97706" font-size="12" font-weight="400" letter-spacing="5" font-family="sans-serif">CONSERVAS GOURMET</text>
+                                    </g>
+                                </svg>
+                            </td>
+                        </tr>
+                    </table>
                 </td>
             </tr>
 
@@ -127,26 +145,26 @@
             <!-- CONTENT SECTION -->
             <tr>
                 <td class="section">
-                    <h3 style="font-family: Georgia, serif; color: #0b1d33; margin-top: 0;">Destacados de la semana</h3>
-                    <p style="font-size: 14px; line-height: 1.5; color: #666;">Cada semana seleccionamos piezas únicas de pesca artesanal en su punto óptimo de maduración en aceite de oliva virgen extra.</p>
+                    <h3 style="font-family: Georgia, serif; color: #3F6212; margin-top: 0;">Destacados de la semana</h3>
+                    <p style="font-size: 14px; line-height: 1.5; color: #52525b;">Cada semana seleccionamos piezas únicas de pesca artesanal en su punto óptimo de maduración en aceite de oliva virgen extra.</p>
                     
                     <table class="product-table" cellpadding="0" cellspacing="0">
                         <tr>
                             <td class="product-td" style="width: 70%;">
-                                <strong style="color: #0b1d33; font-size: 15px;">Mejillones en Escabeche Ría de Arousa</strong><br>
-                                <span style="font-size: 13px; color: #777;">Selección de gran calibre en escabeche tradicional.</span>
+                                <strong style="color: #27272A; font-size: 15px;">Mejillones en Escabeche Ría de Arousa</strong><br>
+                                <span style="font-size: 13px; color: #71717a;">Selección de gran calibre en escabeche tradicional.</span>
                             </td>
                             <td class="product-td" style="width: 30%; text-align: right;">
-                                <span style="font-weight: bold; color: #f26419;">4,50 €</span>
+                                <span style="font-weight: bold; color: #D97706;">4,50 €</span>
                             </td>
                         </tr>
                         <tr>
                             <td class="product-td" style="width: 70%;">
-                                <strong style="color: #0b1d33; font-size: 15px;">Zamburiñas en Salsa Vieira</strong><br>
-                                <span style="font-size: 13px; color: #777;">Capturadas a mano con receta casera.</span>
+                                <strong style="color: #27272A; font-size: 15px;">Zamburiñas en Salsa Vieira</strong><br>
+                                <span style="font-size: 13px; color: #71717a;">Capturadas a mano con receta casera.</span>
                             </td>
                             <td class="product-td" style="width: 30%; text-align: right;">
-                                <span style="font-weight: bold; color: #f26419;">6,20 €</span>
+                                <span style="font-weight: bold; color: #D97706;">6,20 €</span>
                             </td>
                         </tr>
                     </table>
